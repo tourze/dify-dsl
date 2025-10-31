@@ -1,0 +1,38 @@
+{
+  "name": "tourze/dify-dsl",
+  "description": "A framework-agnostic PHP library for parsing and generating Dify DSL (Domain-Specific Language) workflows",
+  "type": "library",
+  "keywords": [
+    "dify",
+    "dsl",
+    "workflow",
+    "ai",
+    "llm",
+    "yaml"
+  ],
+  "homepage": "https://github.com/tourze/dify-dsl",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "symfony/yaml": "^7.3"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^11.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tourze\\DifyDsl\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tourze\\DifyDsl\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "release-version": "0.1.*"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
