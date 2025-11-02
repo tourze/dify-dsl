@@ -47,7 +47,6 @@ class DifyGenerator
     {
         $data = $app->toArray();
 
-        /** @phpstan-ignore-next-line */
         return Yaml::dump($data, 10, $this->indentSize, $this->flags);
     }
 

@@ -114,9 +114,6 @@ class WorkflowBuilder
         return $this;
     }
 
-    /**
-     * @phpstan-ignore-next-line symplify.noReturnSetterMethod
-     */
     public function setOpeningStatement(string $statement): self
     {
         $this->features['opening_statement'] = $statement;
