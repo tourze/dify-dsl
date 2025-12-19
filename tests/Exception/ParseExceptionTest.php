@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Tourze\DifyDsl\Tests\Exception;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
+use Tourze\PHPUnitBase\AbstractExceptionTestCase;
 use Tourze\DifyDsl\Exception\ParseException;
 
-/**
- * @internal
- * @phpstan-ignore-next-line
- */
+
 #[CoversClass(ParseException::class)]
-class ParseExceptionTest extends TestCase
+class ParseExceptionTest extends AbstractExceptionTestCase
 {
     public function testCreateParseException(): void
     {

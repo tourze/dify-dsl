@@ -29,9 +29,7 @@ class StartNode extends AbstractNode
             $nodeData = [];
         }
         /** @var array<string, mixed> $nodeData */
-
-        /** @phpstan-ignore-next-line */
-        $node = new static(
+        $node = new self(
             id: is_string($data['id'] ?? null) ? $data['id'] : '',
             title: is_string($nodeData['title'] ?? null) ? $nodeData['title'] : '开始',
             description: is_string($nodeData['desc'] ?? null) ? $nodeData['desc'] : ''

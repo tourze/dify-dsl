@@ -193,8 +193,6 @@ class LLMNodeTest extends TestCase
     public function testEnableContext(): void
     {
         $node = new LLMNode('llm');
-
-        // @phpstan-ignore-next-line
         $result = $node->enableContext(['context_node', 'output']);
 
         $this->assertSame($node, $result); // 测试流式接口
@@ -210,7 +208,6 @@ class LLMNodeTest extends TestCase
         $node = new LLMNode('llm');
 
         // 先启用上下文
-        // @phpstan-ignore-next-line
         $node->enableContext(['some_node', 'output']);
 
         $result = $node->disableContext();
@@ -239,8 +236,6 @@ class LLMNodeTest extends TestCase
     public function testEnableVision(): void
     {
         $node = new LLMNode('llm');
-
-        // @phpstan-ignore-next-line
         $result = $node->enableVision(['image_node', 'image'], 'high');
 
         $this->assertSame($node, $result); // 测试流式接口
@@ -257,8 +252,6 @@ class LLMNodeTest extends TestCase
     public function testEnableVisionWithDefaults(): void
     {
         $node = new LLMNode('llm');
-
-        // @phpstan-ignore-next-line
         $node->enableVision(['image_source', 'data']);
 
         $vision = $node->getVision();
@@ -274,7 +267,6 @@ class LLMNodeTest extends TestCase
         $node = new LLMNode('llm');
 
         // 先启用视觉
-        // @phpstan-ignore-next-line
         $node->enableVision(['image_node', 'image']);
 
         $result = $node->disableVision();
@@ -456,9 +448,7 @@ class LLMNodeTest extends TestCase
         $node->setModel('gpt-4', 'openai', 'chat', ['temperature' => 0.7]);
         $node->setSystemPrompt('You are helpful');
         $node->setUserPrompt('Process: {{input}}');
-        // @phpstan-ignore-next-line
         $node->enableContext(['ctx', 'data']);
-        // @phpstan-ignore-next-line
         $node->enableVision(['img', 'data'], 'high');
         $node->setVariables(['custom' => 'value']);
         $node->enableStructuredOutput(['type' => 'object']);
@@ -537,9 +527,7 @@ class LLMNodeTest extends TestCase
 
         $node->setModel('claude-3', 'anthropic');
         $node->setSystemPrompt('You are helpful');
-        // @phpstan-ignore-next-line
         $node->enableContext(['ctx', 'output']);
-        // @phpstan-ignore-next-line
         $node->enableVision(['img', 'data']);
         $result = $node->enableStructuredOutput(['type' => 'object']);
 
